@@ -1,102 +1,102 @@
 Category,Classification,Mean,Std,Distribution
-Base Cake,Tiramisu,0.23,2.564,normal
-Base Cake,Sponge,0.794,1.064,normal
-Base Cake,Pound,0.141,1.526,normal
-Base Cake,Chiffon,0.047,1.459,normal
-Base Cake,Cheese,0.361,1.483,normal
-Base Cake,Butter,0.061,1.154,normal
-Truffle Type,Chocolate Outer,-0.054,1.468,normal
-Truffle Type,Candy Outer,0.327,1.266,normal
-Truffle Type,Jelly Filled,-0.839,3.642,normal
-Primary Flavor,Doughnut,0.208,2.689,weibull
-Primary Flavor,Chocolate,0.283,1.097,normal
-Primary Flavor,Dill Pickle,0.407,0.209,normal
-Primary Flavor,Butter Milk,0.981,0.191,normal
-Primary Flavor,Amaretto,0.235,0.222,weibull
-Primary Flavor,Coconut,0.642,0.128,weibull
-Primary Flavor,Blueberry,0.164,2.604,weibull
-Primary Flavor,Chocolate Mint,0.773,0.057,normal
-Primary Flavor,Gingersnap,-0.198,2.006,normal
-Primary Flavor,Coffee,0.973,0.326,normal
-Primary Flavor,Caramel Cream,1.231,0.817,normal
-Primary Flavor,Cheesecake,0.019,0.49,weibull
-Primary Flavor,Bavarian Cream,1.172,0.977,normal
-Primary Flavor,Black Licorice,2.241,0.351,normal
-Primary Flavor,Cherry Cola,1.049,0.252,weibull
-Primary Flavor,Vanilla,0.775,1.159,weibull
-Primary Flavor,Lemon Custard,0.55,0.097,normal
-Primary Flavor,Sour,0.086,1.486,weibull
-Primary Flavor,Mango,-0.125,3.135,weibull
-Primary Flavor,Irish Cream,0.179,2.977,normal
-Primary Flavor,Grand Mariner,0.449,1.28,weibull
-Primary Flavor,Ginger Ale,0.96,0.678,weibull
-Primary Flavor,Fruit Punch,1.187,0.934,normal
-Primary Flavor,Watermelon,-0.369,1.627,normal
-Primary Flavor,Plum,0.034,0.467,binomial
-Primary Flavor,Acai Berry,0.427,0.499,normal
-Primary Flavor,Pecan,0.801,0.15,normal
-Primary Flavor,Toasted Coconut,-0.24,2.057,normal
-Primary Flavor,Orange Brandy,0.514,0.321,weibull
-Primary Flavor,Wintergreen,0.002,1.032,weibull
-Primary Flavor,Creme de Menthe,-0.481,0.284,weibull
-Primary Flavor,Birch Beer,0.268,,weibull
-Primary Flavor,Apricot,0.467,0.286,weibull
-Primary Flavor,Cherry Cream Spice,-0.357,0.088,binomial
-Primary Flavor,Lemon,0.052,0.638,normal
-Primary Flavor,Butter Toffee,1.701,1.699,weibull
-Primary Flavor,Spice,0.633,1.485,weibull
-Primary Flavor,Raspberry Ginger Ale,0.419,1.025,weibull
-Primary Flavor,Ginger Lime,0.315,1.002,weibull
-Primary Flavor,Butter Pecan,0.52,2.393,weibull
-Primary Flavor,Margarita,0.211,0.84,weibull
-Primary Flavor,Kettle Corn,0.014,0.322,normal
-Primary Flavor,Cream Soda,-0.482,1.004,normal
-Primary Flavor,Pear,1.375,0.026,normal
-Primary Flavor,Lemon Bar,-0.651,0.651,normal
-Primary Flavor,Horchata,-0.343,0.312,normal
-Primary Flavor,Pink Lemonade,-0.172,0.283,normal
-Primary Flavor,Orange Pineapple	P,-0.43,0.343,normal
-Primary Flavor,Orange,-0.839,3.642,weibull
-Primary Flavor,Sassafras,-3.919,1.104,normal
-Primary Flavor,Wild Cherry Cream,-4.641,0.441,normal
-Secondary Flavor,Egg Nog,0.163,1.58,normal
-Secondary Flavor,Pear,0.459,0.843,normal
-Secondary Flavor,Rock and Rye,-0.929,4.171,binomial
-Secondary Flavor,Ginger Beer,0.375,0.475,weibull
-Secondary Flavor,Black Currant,1.979,1.156,weibull
-Secondary Flavor,Lemon,1.466,0.713,normal
-Secondary Flavor,Apple,1.231,0.862,weibull
-Secondary Flavor,Tangerine,1.425,0.99,normal
-Secondary Flavor,Kiwi,0.418,0.805,normal
-Secondary Flavor,Fuzzy Navel,0.979,0.267,binomial
-Secondary Flavor,Butter Rum,-0.05,1.132,weibull
-Secondary Flavor,Mojito,1.135,0.425,weibull
-Secondary Flavor,Hazelnut,-0.718,0.026,weibull
-Secondary Flavor,Whipped Cream,0.454,0.524,weibull
-Secondary Flavor,Vanilla,0.28,1.022,weibull
-Secondary Flavor,Banana,0.325,1.022,normal
-Secondary Flavor,Toffee,0.52,2.393,normal
-Secondary Flavor,Black Cherry,-0.025,0.372,normal
-Secondary Flavor,Mixed Berry,0.211,0.84,normal
-Secondary Flavor,Passion Fruit,0.895,1.992,normal
-Secondary Flavor,Rum,0.634,0.796,binomial
-Secondary Flavor,Peppermint,-0.482,1.004,weibull
-Secondary Flavor,Wild Cherry Cream,-0.651,0.651,normal
-Secondary Flavor,Tutti Frutti,0.028,0.2,weibull
-Secondary Flavor,Dill Pickle,-0.343,0.312,normal
-Secondary Flavor,Mango,0.151,0.313,binomial
-Secondary Flavor,Papaya,-0.43,0.343,normal
-Secondary Flavor,Cucumber,-0.839,3.642,normal
-Secondary Flavor,Apricot,-4.497,0.825,normal
-Color Group,Amethyst,0.083,1.463,normal
-Color Group,Teal,0.695,1.169,normal
-Color Group,Burgundy,-0.01,0.537,normal
-Color Group,Olive,0.24,0.408,normal
-Color Group,Opal,0.204,1.144,normal
-Color Group,White,0.013,1.298,normal
-Color Group,Tiffany,0.284,1.063,normal
-Color Group,Black,0.201,2.699,normal
-Color Group,Rose,0.087,1.511,normal
-Color Group,Slate,1.501,0.163,normal
-Color Group,Citrine,-1.354,,normal
-Color Group,Taupe,0.52,2.393,normal
+base_cake,Tiramisu,0.23,2.5639999999999996,normal
+base_cake,Sponge,0.794,1.064,normal
+base_cake,Pound,0.141,1.526,normal
+base_cake,Chiffon,0.047,1.459,normal
+base_cake,Cheese,0.361,1.483,normal
+base_cake,Butter,0.061,1.1540000000000001,normal
+truffle_type,Chocolate Outer,-0.054000000000000006,1.4680000000000002,normal
+truffle_type,Candy Outer,0.327,1.266,normal
+truffle_type,Jelly Filled,-0.8390000000000001,3.642,normal
+primary_flavor,Doughnut,0.20800000000000002,2.6889999999999996,weibull
+primary_flavor,Chocolate,0.28300000000000003,1.097,normal
+primary_flavor,Dill Pickle,0.40700000000000003,0.209,normal
+primary_flavor,Butter Milk,0.981,0.191,normal
+primary_flavor,Amaretto,0.235,0.222,weibull
+primary_flavor,Coconut,0.642,0.128,weibull
+primary_flavor,Blueberry,0.16399999999999998,2.6039999999999996,weibull
+primary_flavor,Chocolate Mint,0.773,0.057,normal
+primary_flavor,Gingersnap,-0.198,2.006,normal
+primary_flavor,Coffee,0.973,0.326,normal
+primary_flavor,Caramel Cream,1.2309999999999999,0.8170000000000001,normal
+primary_flavor,Cheesecake,0.019,0.49,weibull
+primary_flavor,Bavarian Cream,1.172,0.977,normal
+primary_flavor,Black Licorice,2.241,0.35100000000000003,normal
+primary_flavor,Cherry Cola,1.0490000000000002,0.252,weibull
+primary_flavor,Vanilla,0.775,1.159,weibull
+primary_flavor,Lemon Custard,0.55,0.09699999999999999,normal
+primary_flavor,Sour,0.086,1.486,weibull
+primary_flavor,Mango,-0.125,3.135,weibull
+primary_flavor,Irish Cream,0.179,2.977,normal
+primary_flavor,Grand Mariner,0.449,1.28,weibull
+primary_flavor,Ginger Ale,0.96,0.6779999999999999,weibull
+primary_flavor,Fruit Punch,1.187,0.934,normal
+primary_flavor,Watermelon,-0.369,1.6269999999999998,normal
+primary_flavor,Plum,0.034,0.467,binomial
+primary_flavor,Acai Berry,0.42700000000000005,0.499,normal
+primary_flavor,Pecan,0.8009999999999999,0.15,normal
+primary_flavor,Toasted Coconut,-0.24,2.057,normal
+primary_flavor,Orange Brandy,0.514,0.321,weibull
+primary_flavor,Wintergreen,0.002,1.032,weibull
+primary_flavor,Creme de Menthe,-0.48100000000000004,0.284,weibull
+primary_flavor,Birch Beer,0.268,0.001,weibull
+primary_flavor,Apricot,0.467,0.28600000000000003,weibull
+primary_flavor,Cherry Cream Spice,-0.35700000000000004,0.08800000000000001,binomial
+primary_flavor,Lemon,0.052000000000000005,0.638,normal
+primary_flavor,Butter Toffee,1.7009999999999998,1.699,weibull
+primary_flavor,Spice,0.633,1.485,weibull
+primary_flavor,Raspberry Ginger Ale,0.419,1.025,weibull
+primary_flavor,Ginger Lime,0.315,1.002,weibull
+primary_flavor,Butter Pecan,0.52,2.3930000000000002,weibull
+primary_flavor,Margarita,0.21100000000000002,0.84,weibull
+primary_flavor,Kettle Corn,0.013999999999999999,0.322,normal
+primary_flavor,Cream Soda,-0.48200000000000004,1.004,normal
+primary_flavor,Pear,1.375,0.026000000000000002,normal
+primary_flavor,Lemon Bar,-0.6509999999999999,0.6509999999999999,normal
+primary_flavor,Horchata,-0.34299999999999997,0.312,normal
+primary_flavor,Pink Lemonade,-0.172,0.28300000000000003,normal
+primary_flavor,Orange Pineapple	P,-0.43,0.34299999999999997,normal
+primary_flavor,Orange,-0.8390000000000001,3.642,weibull
+primary_flavor,Sassafras,-3.9189999999999996,1.104,normal
+primary_flavor,Wild Cherry Cream,-4.641,0.441,normal
+secondary_flavor,Egg Nog,0.163,1.58,normal
+secondary_flavor,Pear,0.45899999999999996,0.843,normal
+secondary_flavor,Rock and Rye,-0.929,4.171,binomial
+secondary_flavor,Ginger Beer,0.375,0.475,weibull
+secondary_flavor,Black Currant,1.979,1.156,weibull
+secondary_flavor,Lemon,1.466,0.713,normal
+secondary_flavor,Apple,1.2309999999999999,0.862,weibull
+secondary_flavor,Tangerine,1.425,0.99,normal
+secondary_flavor,Kiwi,0.418,0.805,normal
+secondary_flavor,Fuzzy Navel,0.9790000000000001,0.267,binomial
+secondary_flavor,Butter Rum,-0.05,1.1320000000000001,weibull
+secondary_flavor,Mojito,1.135,0.425,weibull
+secondary_flavor,Hazelnut,-0.718,0.026000000000000002,weibull
+secondary_flavor,Whipped Cream,0.45399999999999996,0.524,weibull
+secondary_flavor,Vanilla,0.28,1.022,weibull
+secondary_flavor,Banana,0.325,1.022,normal
+secondary_flavor,Toffee,0.52,2.3930000000000002,normal
+secondary_flavor,Black Cherry,-0.025,0.37200000000000005,normal
+secondary_flavor,Mixed Berry,0.21100000000000002,0.84,normal
+secondary_flavor,Passion Fruit,0.895,1.992,normal
+secondary_flavor,Rum,0.634,0.7959999999999999,binomial
+secondary_flavor,Peppermint,-0.48200000000000004,1.004,weibull
+secondary_flavor,Wild Cherry Cream,-0.6509999999999999,0.6509999999999999,normal
+secondary_flavor,Tutti Frutti,0.027999999999999997,0.2,weibull
+secondary_flavor,Dill Pickle,-0.34299999999999997,0.312,normal
+secondary_flavor,Mango,0.151,0.313,binomial
+secondary_flavor,Papaya,-0.43,0.34299999999999997,normal
+secondary_flavor,Cucumber,-0.8390000000000001,3.642,normal
+secondary_flavor,Apricot,-4.497,0.825,normal
+color_group,Amethyst,0.083,1.463,normal
+color_group,Teal,0.695,1.169,normal
+color_group,Burgundy,-0.01,0.537,normal
+color_group,Olive,0.24,0.408,normal
+color_group,Opal,0.204,1.1440000000000001,normal
+color_group,White,0.013000000000000001,1.298,normal
+color_group,Tiffany,0.284,1.063,normal
+color_group,Black,0.201,2.699,normal
+color_group,Rose,0.087,1.511,normal
+color_group,Slate,1.501,0.163,normal
+color_group,Citrine,-1.354,0.001,normal
+color_group,Taupe,0.52,2.3930000000000002,normal
