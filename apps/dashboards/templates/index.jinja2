@@ -1,0 +1,17 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="card">
+  <h1 class="site-title">{{ title }}</h1>
+  <p class="subtitle">Dashboard Demos (View source on <a href="https://github.com/wesleybeckner/truffletopia">Github</a>).</p>
+  <a href="/analyze/" class="dash-link">
+    <span>Product Margin Analysis</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <a href="/forecast/" class="dash-link">
+    <span>Customer Forecasts</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}

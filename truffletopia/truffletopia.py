@@ -44,10 +44,11 @@ class UnitOperation():
     self.std = std
     self.distribution = distribution
 
-  def set_attributes(self, truffle):
+  def set_attributes(self, truffle, line_effect=None):
     """
     Sets the UnitOps attributes according to the characteristics of the product
-    being made
+    being made. line_effect is a 2 element list that contains the multiplicative
+    effect of the line on mu and sigma, applied at the final calculation of mu, sigma
     """
     mus = []
     sigs = []
@@ -66,8 +67,12 @@ class UnitOperation():
       dists.append(operations.loc[operations['Classification'] == uni]
                    ['Distribution'].values[0])
     mus = np.array(mus)
-    mu = round(class_weights.dot(mus)/np.sum(class_weights), 4)
-    sig = round(class_weights.dot(sigs)/np.sum(class_weights)*.1, 4)
+    if line_effect:
+        mu = round(line_effect[0]*(class_weights.dot(mus)/np.sum(class_weights)), 4)
+        sig = round(line_effect[1]*class_weights.dot(sigs)/np.sum(class_weights)*.1, 4)
+    else: 
+        mu = round(class_weights.dot(mus)/np.sum(class_weights), 4)
+        sig = round(class_weights.dot(sigs)/np.sum(class_weights)*.1, 4)
 
     if 'weibull' not in dists :
       dist = norm
@@ -77,7 +82,8 @@ class UnitOperation():
     self.rate = mu
     self.std = sig
     self.distribution = dist
-    self.name = name
+    if not line_effect:
+      self.name = name
 
   def run(self, quantity=1):
     """
