@@ -48,7 +48,7 @@ def init_dashboard(server):
         ], style={'margin-top': '15px',
                   'margin-bottom': '15px'}),
         html.Div(id='table'),
-    ])
+    ], style={'height': '100vh'})
 
     dash_app.layout = html.Div([
         NAVBAR,

@@ -103,7 +103,7 @@ def init_callbacks(app):
                     pass
         groupby = list(df.columns[df.dtypes != np.float64].values)
 
-        return create_table(df),\
+        return create_table(df, dark_mode=False),\
             html.Div([
             dcc.Graph(
                         id='fig-1',

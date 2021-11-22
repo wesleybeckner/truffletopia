@@ -141,8 +141,10 @@ def line(df, y, x, color):
 
 def table_type(df_column):
     # Note - this only works with Pandas >= 1.0.0
-
-    if isinstance(df_column.dtype, pd.DatetimeTZDtype):
+    
+    if (isinstance(df_column.dtype, pd.DatetimeTZDtype) or
+       (df_column.dtype == '<M8[ns]')):
+        
         return 'datetime'
     elif (isinstance(df_column.dtype, pd.StringDtype) or
             isinstance(df_column.dtype, pd.BooleanDtype) or
@@ -154,31 +156,53 @@ def table_type(df_column):
             isinstance(df_column.dtype, pd.Int8Dtype) or
             isinstance(df_column.dtype, pd.Int16Dtype) or
             isinstance(df_column.dtype, pd.Int32Dtype) or
-            isinstance(df_column.dtype, pd.Int64Dtype)):
+            isinstance(df_column.dtype, pd.Int64Dtype) or
+             (df_column.dtype == np.float64)):
         return 'numeric'
     else:
         return 'any'
 
-def create_table(df):
-    return dash_table.DataTable(
-            id='data',
-            export_format='xlsx',
+def create_table(df, id='data', filter_action='native', export='xlsx',
+                 fixed_header=True, height='260', scheme=Scheme.fixed,
+                 trim=Trim.yes, dark_mode=True):
+    if scheme and trim:
+        table = dash_table.DataTable(
+            id=id,
             data=df.to_dict('records'),
             columns=[
                 {'name': i, 'id': i, 'type': table_type(df[i]),
-                'format': Format(precision=2, scheme=Scheme.fixed, 
-                    trim=Trim.yes)} for i in df.columns
-            ],
-            filter_action='native',
-            style_data={
-                'color': 'black'},
-            style_header={
-                'color': 'black'},
-            style_table={'overflowX': 'auto',
-                'height': '260px', 'overflowY': 'auto',
-                'margin': '10px'},
-            fixed_rows={
-                'headers': True},
-            style_cell={
-                'minWidth': 95}
-        )
+                'format': Format(precision=3, scheme=scheme,
+                    trim=trim)} for i in df.columns
+            ])
+    else:
+        table = dash_table.DataTable(
+            id=id,
+            data=df.to_dict('records'),
+            columns=[
+                {'name': i, 'id': i, 'type': table_type(df[i]),
+                'format': Format(precision=3)} for i in df.columns
+            ])
+    table.style_table={'overflowX': 'auto',
+                        'height': f'{height}px', 'overflowY': 'auto',
+                        'margin': '10px',
+                        }
+    table.style_cell={'minWidth': 95}
+    if filter_action:
+        table.filter_action = filter_action
+    if export:
+        table.export = export
+    if fixed_header:
+        table.fixed_rows={'headers': True}
+    if dark_mode:
+        table.style_data={
+                'color': 'white',
+                'backgroundColor': 'rgb(50, 50, 50)',}
+        table.style_filter={
+                'color': 'white',
+                'backgroundColor': 'rgb(100, 100, 100)',}
+        table.style_header={
+                'color': 'white',
+                'backgroundColor': 'rgb(30, 30, 30)',}
+        table.style_table['backgroundColor'] = 'black'
+    
+    return table

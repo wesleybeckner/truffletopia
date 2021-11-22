@@ -16,6 +16,7 @@ darkcolors = {'background': 'rgb(30, 30, 30)',
 colors = {'background': '#FFFFFF',
           'text': '#111111'}
 style = {'height': 300}
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         dbc.themes.VAPOR # SLATE,VAPOR
                         ]
@@ -27,10 +28,15 @@ plot_layouts = {
     "margin": dict(
         l=0,
         r=0,
-        b=0,
+        b=10,
         t=30,
         pad=4
     )}
+
+small_plot_layouts = plot_layouts.copy()
+small_plot_layouts['height'] = 100
+small_plot_layouts['font'] = dict(size=6)
+
 df = pd.read_csv('data/oee_1000.csv')
 moodsdf = pd.read_csv('data/moods_short.csv')
 
@@ -160,11 +166,23 @@ def parity(df, x, y):
     fig.update_layout(plot_layouts)
     return fig
 
+def seasonal(df, customer):
+    fig1 = px.line(df, x='month', y='kg', color='year')
+    fig1.update_traces(line=dict(color = 'rgba(50,50,50,0.2)'))
+    fig2 = px.scatter(df, x='month', y='kg', color='year', color_continuous_scale='viridis')
+    fig3 = go.Figure(data=fig1.data + fig2.data)
+    fig3.update_layout(small_plot_layouts)
+    fig3.update_layout({'title': customer,
+                        'showlegend': False})
+
+    return fig3
 
 def table_type(df_column):
     # Note - this only works with Pandas >= 1.0.0
-
-    if isinstance(df_column.dtype, pd.DatetimeTZDtype):
+    
+    if (isinstance(df_column.dtype, pd.DatetimeTZDtype) or
+       (df_column.dtype == '<M8[ns]')):
+        
         return 'datetime'
     elif (isinstance(df_column.dtype, pd.StringDtype) or
             isinstance(df_column.dtype, pd.BooleanDtype) or
@@ -176,38 +194,59 @@ def table_type(df_column):
             isinstance(df_column.dtype, pd.Int8Dtype) or
             isinstance(df_column.dtype, pd.Int16Dtype) or
             isinstance(df_column.dtype, pd.Int32Dtype) or
-            isinstance(df_column.dtype, pd.Int64Dtype)):
+            isinstance(df_column.dtype, pd.Int64Dtype) or
+             (df_column.dtype == np.float64)):
         return 'numeric'
     else:
         return 'any'
 
-
-def create_table(df, export='xlsx'):
-    return dash_table.DataTable(
-        id='data',
-        export_format=export,
-        data=df.to_dict('records'),
-        columns=[
-            {'name': i, 'id': i, 'type': table_type(df[i]),
-             'format': Format(precision=2, scheme=Scheme.fixed,
-                              trim=Trim.yes)} for i in df.columns
-        ],
-        filter_action='native',
-        style_data={
-            'color': 'white',
-            'backgroundColor': 'rgb(50, 50, 50)',},
-        style_filter={
-            'color': 'white',
-            'backgroundColor': 'rgb(100, 100, 100)',},
-        style_header={
-            'color': 'white',
-            'backgroundColor': 'rgb(30, 30, 30)',},
-        style_table={'overflowX': 'auto',
-                     'height': '260px', 'overflowY': 'auto',
-                     'margin': '10px',
-                     'backgroundColor': 'black',},
-        fixed_rows={
-            'headers': True},
-        style_cell={
-            'minWidth': 95}
-    )
+def create_table(df, id='data', filter_action='native', export='xlsx',
+                 fixed_header=True, height='260', scheme=Scheme.fixed,
+                 trim=Trim.yes, dark_mode=True):
+    if scheme and trim:
+        table = dash_table.DataTable(
+            id=id,
+            data=df.to_dict('records'),
+            columns=[
+                {'name': i, 'id': i, 'type': table_type(df[i]),
+                'format': Format(precision=3, scheme=scheme,
+                    trim=trim)} for i in df.columns
+            ])
+    else:
+        table = dash_table.DataTable(
+            id=id,
+            data=df.to_dict('records'),
+            columns=[
+                {'name': i, 'id': i, 'type': table_type(df[i]),
+                'format': Format(precision=3)} for i in df.columns
+            ])
+    table.style_table={'overflowX': 'auto',
+                        'height': f'{height}px', 'overflowY': 'auto',
+                        "margin": dict(
+                                        l=0,
+                                        r=0,
+                                        b=0,
+                                        t=30,
+                                        pad=4
+                                    )
+                        }
+    table.style_cell={'minWidth': 95}
+    if filter_action:
+        table.filter_action = filter_action
+    if export:
+        table.export = export
+    if fixed_header:
+        table.fixed_rows={'headers': True}
+    if dark_mode:
+        table.style_data={
+                'color': 'white',
+                'backgroundColor': 'rgb(50, 50, 50)',}
+        table.style_filter={
+                'color': 'white',
+                'backgroundColor': 'rgb(100, 100, 100)',}
+        table.style_header={
+                'color': 'white',
+                'backgroundColor': 'rgb(30, 30, 30)',}
+        table.style_table['backgroundColor'] = 'black'
+    
+    return table
